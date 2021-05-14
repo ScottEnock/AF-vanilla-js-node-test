@@ -8,8 +8,7 @@
 		"watch:webpack": "onchange src/**.js -- webpack",
 		"watch:static": "onchange src/static/** -- cp -r src/static/* build/",
 		"dev": "npm run watch:scss & npm run watch:webpack & npm run watch:static & serve build",
-		"build": "mv -r src/static/* build/* && webpack && node-sass -o build src/styles/main.scss",
-		"we": "webpack"
+		"build": "mv -r src/static/* build/* && webpack && node-sass -o build src/styles/main.scss"
 	},
 	"repository": {
 		"type": "git",
