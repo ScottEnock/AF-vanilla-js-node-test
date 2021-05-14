@@ -5,10 +5,11 @@
 	"main": "index.js",
 	"scripts": {
 		"watch:scss": "onchange src/styles/**.scss -- node-sass -o build src/styles/main.scss",
-		"watch:webpack": "onchange src/**/**.js -- webpack",
+		"watch:webpack": "onchange src/**.js -- webpack",
 		"watch:static": "onchange src/static/** -- cp -r src/static/* build/",
 		"dev": "npm run watch:scss & npm run watch:webpack & npm run watch:static & serve build",
-		"build": "mv -r src/static/* build/* && webpack && node-sass -o build src/styles/main.scss"
+		"build": "mv -r src/static/* build/* && webpack && node-sass -o build src/styles/main.scss",
+		"we": "webpack"
 	},
 	"repository": {
 		"type": "git",
@@ -23,18 +24,17 @@
 	"homepage": "https://github.com/ScottEnock/AF-vanilla-js-node-test#readme",
 	"devDependencies": {
 		"@babel/core": "^7.14.2",
+		"@babel/plugin-transform-runtime": "^7.14.2",
 		"@babel/preset-env": "^7.14.2",
 		"babel-cli": "^6.26.0",
 		"babel-loader": "^8.2.2",
 		"node-sass": "^6.0.0",
 		"onchange": "^7.1.0",
 		"webpack": "^5.37.0",
-		"webpack-cli": "^4.7.0",
-		"webpack-dev-server": "^3.11.2"
+		"webpack-cli": "^4.7.0"
 	},
 	"dependencies": {
 		"axios": "^0.21.1",
 		"fs-extra": "^10.0.0"
-	},
-	"type": "module"
+	}
 }
