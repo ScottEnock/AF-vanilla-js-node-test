@@ -12,6 +12,7 @@ module.exports = {
 				use: {
 					loader: "babel-loader",
 					options: {
+						plugins: ["@babel/plugin-transform-runtime"],
 						presets: [
 							[
 								"@babel/preset-env",
@@ -27,7 +28,7 @@ module.exports = {
 						],
 					},
 				},
-				exclude: /node_modules/,
+				exclude: [/node_modules/, "/src/backend"],
 			},
 		],
 	},
